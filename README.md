@@ -3,10 +3,14 @@
 Try it on google colab: https://colab.research.google.com/github/laurenlabell/checksum_finder/blob/master/ChecksumFinder.ipynb
 
 
-Usage: `python3 sumeng_module.py 8 test1.txt ` 
+Usage: `python3 sumeng_module.py width file `
+Where `width` is the bitwidth of the checksum field and `file` is a file with messages in hex format, 1 message per line. 
 
-Running against the Tufts Checksum Corpus: `python3 test_corpus`
+Example: `python3 sumeng_module.py 8 test1.txt`
 
+
+
+Example Run:
 ````
 python3 sumeng_module.py 8 test1.txt 
 	0 	entropy: 2.585	perc_used: 1.0	start: 0	end: 0	checksum_index: -1	fold_op: <built-in function add>	final_op: <built-in function xor>	magic: 0x55
@@ -91,3 +95,6 @@ print(validate_message('806FA30200800041'),'806FA30200800041')
 # --------------------------------------------------------------------------------
 
 ````
+
+To run against the corpus_full.csv: `python3 test_corpus`
+
