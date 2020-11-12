@@ -13,9 +13,9 @@ Limitations:
 Example Run:
 ````
 python3 sumeng_module.py 8 test1.txt 
-	0 	entropy: 2.585	perc_used: 1.0	start: 0	end: 0	checksum_index: -1	fold_op: <built-in function add>	final_op: <built-in function xor>	magic: 0x55
-	1 	entropy: 2.585	perc_used: 0.92	start: 0	end: -1	checksum_index: -1	fold_op: <built-in function add>	final_op: <built-in function xor>	magic: 0x55
-Solution number to gen code for? :0
+#	0 	entropy: 2.585	perc_used: 1.0	start: 0	end: 0	checksum_index: -1	fold_op: <built-in function add>	final_op: <built-in function xor>	magic: 0x55
+#	1 	entropy: 2.585	perc_used: 0.92	start: 0	end: -1	checksum_index: -1	fold_op: <built-in function add>	final_op: <built-in function xor>	magic: 0x55
+# Solution number to gen code for? :0
 #  start: 0 end: 0 check: -1 foldOp: <built-in function add> finalOp: <built-in function xor> magicValue: 0x55
 # ================================================================================
 # Generated Code
