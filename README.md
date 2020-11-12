@@ -1,14 +1,14 @@
 # Checksum Finder
 
-Try it on google colab: https://colab.research.google.com/github/laurenlabell/checksum_finder/blob/master/ChecksumFinder.ipynb
-
 
 Usage: `python3 sumeng_module.py width file `
 Where `width` is the bitwidth of the checksum field and `file` is a file with messages in hex format, 1 message per line. 
 
 Example: `python3 sumeng_module.py 8 test1.txt`
 
-
+Limitations: 
+ - `sumeng_module.py` expects big endian data. 
+ - Our tool expects that the width of the checksum and the stride through the data are both either 8-bit or 16-bit. In the future we expect to support 16-bit checksums with 8-bit data strides. 
 
 Example Run:
 ````
