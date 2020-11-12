@@ -432,7 +432,7 @@ def prettyprintsol(sol,i=""):
             match_gt_s = "Target"
         else:
             match_gt_s = "Other"
-    print(f"\t{i} {match_gt_s}\tentropy: {entropy}\tperc_used: {round(payload_ratio,2)}\tstart: {msg_start}\tend: {msg_end}\tchecksum_index: {candidate_index}\tfold_op: {fold_op}\tfinal_op: {final_op}\tmagic: {magic_va}")
+    print(f"#\t{i} {match_gt_s}\tentropy: {entropy}\tperc_used: {round(payload_ratio,2)}\tstart: {msg_start}\tend: {msg_end}\tchecksum_index: {candidate_index}\tfold_op: {fold_op}\tfinal_op: {final_op}\tmagic: {magic_va}")
 
 if __name__ == "__main__":
     # from corpus import examples
@@ -496,7 +496,7 @@ D00771BCBE3B0000
 
         min_sol = 0
         max_sol = len(res)
-        desired_sol = int(input("Solution number to gen code for? :"))
+        desired_sol = int(input("# Solution number to gen code for? :"))
         
 
         if min_sol <= desired_sol and desired_sol <= max_sol:

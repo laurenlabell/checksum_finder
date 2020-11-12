@@ -60,6 +60,14 @@ def code(msgStart,msgEnd,checksumPos,foldOp,finalOp,magicValue,width):
 
 import operator
 
+def twosComp(n):
+    return -n
+
+def onesComp(n1, n2):
+    mod = 1 << {width*8}
+    result = n1 + n2
+    return result if result < mod else (result + 1) % mod  
+
 def pad(xs,w):
 	n = len(xs)
 	target_n = (-(-n//w)) * w
@@ -75,7 +83,8 @@ def to_int(x):
 	return int.from_bytes(bytes(x),'big')
 
 
-def preprocess(xs,w):
+def preprocess(hex_str,w):
+	xs = [x for x in bytes.fromhex(hex_str)]
 	xs_padded = pad(xs,w)
 	xs_chunked = chunk(xs_padded,w)
 	xs_ints = [to_int(x) for x in xs_chunked]
@@ -105,3 +114,34 @@ def validate_message(rawmsg):
 
 	return calculate_checksum(payload) == checksum"""
 	return res
+
+
+def code_soln( sol,msgs,width=8):
+
+    match_gt,params = sol #(None, (1.585, 0, -1, 1, <built-in function sub>, <built-in function add>, '0xc9c4', 0.96875))
+    entropy , msg_start, msg_end, candidate_index, fold_op, final_op, magic_val, payload_ratio = params
+
+    #magic_val = hex(int(magic_val)) if magic_val is not None else None
+    print("#  start:", msg_start, "end:", msg_end, "check:", candidate_index, "foldOp:", fold_op,"finalOp:", final_op,"magicValue:", magic_val)
+    print("# " + "="*80)
+    if True:
+        print("# Generated Code")
+        print("# " + "-"*80)
+        print("")
+        code_str = code(msg_start, msg_end, candidate_index, fold_op, final_op, magic_val,int(width/8))
+        print(code_str)
+        print("")
+        
+        msgs_assert =msgs.split("\n")
+        print("# " + "="*80)
+        print("# Unit Tests")
+        print("# " + "-"*80)
+        print("")
+        for m in msgs_assert:
+            print(f"print(validate_message('{m.strip()}'),'{m.strip()}')")
+
+        print("")
+        print("# " + "-"*80)
+       	print("# End Generated Code")
+        print("# " + "-"*80)
+        print("")
