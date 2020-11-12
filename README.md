@@ -2,7 +2,7 @@
 
 
 Usage: `python3 sumeng_module.py width file `
-Where `width` is the bitwidth of the checksum field and `file` is a file with messages in hex format, 1 message per line. 
+Where `width` is the bitwidth of the checksum field and `file` is a file with messages in ascii hex format, 1 message per line. 
 
 Example: `python3 sumeng_module.py 8 test1.txt`
 
