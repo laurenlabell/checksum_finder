@@ -96,5 +96,5 @@ print(validate_message('806FA30200800041'),'806FA30200800041')
 
 ````
 
-To run against the corpus_full.csv: `python3 test_corpus`
+To run against the corpus_full.csv: `python3 test_corpus.py`
 
