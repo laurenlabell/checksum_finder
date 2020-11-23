@@ -1,5 +1,12 @@
 # Checksum Finder
 
+Trying to reverse engineer a checksum? We can help! 
+
+Reverse engineering unknown binary message formats is an important part of security research. Error detecting codes such as checksums and Cyclic Redundancy Check codes (CRCs) are commonly added to messages as a guard against corrupt or untrusted input. Before an analyst can manufacture input for software which uses checksums they must discover the algorithm to calculate a valid checksum. To address this need, we have developed a program synthesis based approach for detecting and reverse-engineering checksum algorithms automatically.
+
+Our approach takes a small set of binary messages as input and automatically returns a Python implementation of the checksum algorithm if one can be found. Our approach first performs a search over the message space to identify the location of the checksum and then uses program synthesis to identify the operations performed on the message to compute the checksum. We return to the user runnable code to both calculate a checksum from a message and to validate a message according to the checksum algorithm. We generate unit tests, allowing the user to validate the synthesized checksum algorithm is correct with regard to the input messages.
+
+For all the details read our paper! https://dl.acm.org/doi/10.1145/3411506.3417599
 
 Usage: `python3 sumeng_module.py width file `
 Where `width` is the bitwidth of the checksum field and `file` is a file with messages in ascii hex format, 1 message per line. 
